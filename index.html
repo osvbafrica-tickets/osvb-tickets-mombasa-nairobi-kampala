@@ -19,7 +19,7 @@
       /* ✅ Responsive background image */
       background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-       /* url("images/background.gif") */
+        url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80') 
         no-repeat center center fixed;
       background-size: cover;
       color: #f1f5f9;
@@ -57,7 +57,7 @@
     }
 
     a:hover {
-      background-color: #1db9d8;
+      background-color: #1d4ed8;
       transform: scale(1.02);
     }
 
@@ -84,78 +84,13 @@
     <h1>Welcome to OSVB Africa Tickets</h1>
 
     <!-- Replace these two links with your real URLs -->
-
-
-
-    <a id="nairobi" href="https://oldschoolandvibebrunchafrica.hustlesasa.shop/products/6957faecad2b1451671b2dfd" target="_blank">MOMBASA EVENT</a>
-    <a id="kampala" href="https://oldschoolandvibebrunchafrica.hustlesasa.shop/products/6957f938ad2b1451671b2de1" target="_blank">NAIROBI EVENT</a>
-    <a id="kampala" href="" target="_blank">KAMPALA EVENT</a>
+    <a href="https://oldschoolandvibebrunchafrica.hustlesasa.shop/?product=70558" target="_blank">NAIROBI EVENT</a>
+    <a href="https://mticket.252.co.ug/events/10de9b67-1ebe-4d42-859b-04263c7fc420" target="_blank">KAMPALA EVENT</a>
 
     <footer>Powered by Old School and Vibe Brunch Africa</footer>
   </div>
 </body>
 </html>
-<script>
-   const nairobiLink = document.getElementById("nairobi");
-   const kampalaLink = document.getElementById("kampala");
-    nairobiLink.addEventListener("mouseover", function() {
-        style.color = "red";
-    });
-    kampalaLink.addEventListener("mouseover", function() {
-        style.color = "red";
-    });
 
-(function(){
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Inject extra styles
-  const css = `
-  .card{ transform: translateY(12px); opacity:0; transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s ease; }
-  .card.enter{ transform: translateY(0); opacity:1; }
-  .card .meta-row{ display:flex; justify-content:space-between; align-items:center; margin-top:12px; gap:10px; }
-  .theme-toggle{ background:rgba(255,255,255,.08); color:#fff; border:0; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:600; }
-  .ripple{ position:relative; overflow:hidden; }
-  .ripple span{ position:absolute; border-radius:50%; transform: scale(0); background: rgba(255,255,255,.28); animation: ripple .6s linear; pointer-events:none; }
-  @keyframes ripple{ to{ transform: scale(4); opacity:0; } }
-  .bg-anim{ background-size: cover; transition: background-position 10s linear; }
-  .card.alt{ background: rgba(0,0,0,0.45); }
-  `;
-  const style = document.createElement('style');
-  style.textContent = css;
-  document.head.appendChild(style);
-
-  // Ripple effect on links
-  const links = document.querySelectorAll('.card a');
-  links.forEach(a=>{
-    a.classList.add('ripple');
-    a.addEventListener('click', e=>{
-      const rect = a.getBoundingClientRect();
-      const span = document.createElement('span');
-      const size = Math.max(rect.width, rect.height);
-      span.style.width = span.style.height = size + 'px';
-      span.style.left = (e.clientX - rect.left - size/2) + 'px';
-      span.style.top  = (e.clientY - rect.top - size/2) + 'px';
-      a.appendChild(span);
-      setTimeout(()=> span.remove(), 650);
-    });
-  });
-
-  // Entrance animation
-  const card = document.querySelector('.card');
-  requestAnimationFrame(()=> { if (!prefersReduced) card.classList.add('enter'); });
-
- 
-  // Subtle background pan (reduced motion respected)
-  if (!prefersReduced){
-    document.body.classList.add('bg-anim');
-    let pos = 0, dir = 1;
-    setInterval(()=> {
-      pos += 0.15 * dir;
-      if (pos > 40 || pos < 0) dir *= -1;
-      document.body.style.backgroundPosition = pos + '% 40%';
-    }, 80);
-  }
-})();
-</script>
 
 
