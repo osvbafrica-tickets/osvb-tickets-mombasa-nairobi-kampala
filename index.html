@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +22,22 @@
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
          url("images/background.gif") 
         no-repeat center center fixed;
+         
+      background-size: cover;
+      color: #f1f5f9;
+      text-align: center;
+    
+    /* for pc remove this on github *
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+         url("D:/Mr_one1/IT work/work/OSVB-Website/background.gif") 
+        no-repeat center center fixed;
+         
       background-size: cover;
       color: #f1f5f9;
       text-align: center;
     }
-
+      */
     .card {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
@@ -86,10 +98,18 @@
     <!-- Replace these two links with your real URLs -->
     <a href="https://oldschoolandvibebrunchafrica.hustlesasa.shop/products/6957faecad2b1451671b2dfd">MOMBASA EVENT</a>
     <a href="https://oldschoolandvibebrunchafrica.hustlesasa.shop/products/6957f938ad2b1451671b2de1" target="_blank">NAIROBI EVENT</a>
-    <a href="">KAMPALA EVENT</a>
+    <a id = 'KAMPALA' href="">KAMPALA EVENT</a>
 
     <footer>Powered by Old School and Vibe Brunch Africa</footer>
   </div>
+
+  <script>
+    const kampalaLink = document.getElementById('KAMPALA');
+    kampalaLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      alert("Event will be available soon");
+    });
+  </script>
 </body>
 </html>
 
